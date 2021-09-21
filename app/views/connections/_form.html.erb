@@ -1,0 +1,39 @@
+<%= form_with(model: connection, local: true) do |form| %>
+  <% if connection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(connection.errors.count, "error") %> prohibited this connection from being saved:</h2>
+
+      <ul>
+        <% connection.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :connection_type %>
+    <%= select_tag :connection_type, options_for_select([["Option 1", 'option one'],["Option 2", "option two"],["Option 3", "option three"]] ) %>
+    <%= form.text_field :connection_type%>
+  <div>
+
+  <div class="field">
+    <%= form.label :max_requests %>
+    <%= form.number_field :max_requests %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+

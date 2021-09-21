@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @connection.name %>
+</p>
+
+<p>
+  <strong>Connection type:</strong>
+  <%= @connection.connection_type %>
+</p>
+
+<p>
+  <strong>Max requests:</strong>
+  <%= @connection.max_requests %>
+</p>
+
+
+<%= link_to 'Edit', edit_connection_path(@connection) %> |
+<%= link_to 'Back', connections_path %>
