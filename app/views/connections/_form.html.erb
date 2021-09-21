@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :connection_type %>
-    <%= select_tag :connection_type, options_for_select([["Option 1", 'option one'],["Option 2", "option two"],["Option 3", "option three"]] ) %>
+    <%= select_tag :connection_type, options_for_select(Connection::CONNECTION_TYPES) %>
     <%= form.text_field :connection_type%>
   <div>
 
@@ -29,7 +29,7 @@
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password, autocomplete: 'off' %>
   </div>
 
   <div class="actions">

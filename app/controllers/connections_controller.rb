@@ -13,6 +13,7 @@ class ConnectionsController < ApplicationController
   # GET /connections/new
   def new
     @connection = Connection.new
+    @connection.connection_type = Connection::CONNECTION_TYPES.first.first
   end
 
   # GET /connections/1/edit
